@@ -1,0 +1,53 @@
+﻿@model DuAn.Models.Size
+
+@{
+    ViewData["Title"] = "EditSize";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content" >
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"> Thông Tin Sửa Size</h3>
+
+        </div>
+        <div class="card-body"> 
+            @using (Html.BeginForm("EditSize", "SizeAdmin", FormMethod.Post))
+            {
+                  @Html.HiddenFor(p => p.Id)
+                  <div class="bs-stepper-content">
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Kích Thước</label>
+                           @Html.TextBoxFor(p => p.Kichthuoc, new { @class = "form-control" })
+                           @Html.ValidationMessageFor(Model => Model.Kichthuoc, "", new { @class = "text-danger" })
+                     
+                      </div>
+
+
+                      <div class="form-group">
+                        <a href="/Admin/ColorAdmin/ShowAllColor" class="btn btn-primary" >Quay Lại</a>
+                        <button type="Submit" class="btn btn-danger" >Submit</button>
+                      </div>
+
+                      
+                    </div>
+             
+                  </div>
+           
+            }
+
+        </div>
+
+
+        <div class="card-footer"> 
+
+
+        </div>
+
+    </div>
+
+</section> 
